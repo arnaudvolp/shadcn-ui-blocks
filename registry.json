@@ -319,6 +319,34 @@
       ]
     },
     {
+      "name": "pricing-04",
+      "type": "registry:block",
+      "title": "Pricing 04",
+      "description": "A 3-column pricing with colored inner header areas and pill CTA buttons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "badge",
+        "separator"
+      ],
+      "categories": [
+        "pricing"
+      ],
+      "meta": {
+        "image": "/r/previews/pricing-04.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/pricing-04/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing-04.tsx"
+        }
+      ]
+    },
+    {
       "name": "cta-01",
       "type": "registry:block",
       "title": "CTA 01",
@@ -771,7 +799,9 @@
       "description": "A collection of social media brand icons for authentication and social links",
       "dependencies": [],
       "registryDependencies": [],
-      "categories": ["social-icons"],
+      "categories": [
+        "social-icons"
+      ],
       "files": [
         {
           "path": "src/registry/blocks/social-icons/icons.tsx",
@@ -1078,7 +1108,10 @@
       ],
       "meta": {
         "image": "/r/previews/waitlist-01.webp",
-        "stacks": ["supabase", "postgres"]
+        "stacks": [
+          "supabase",
+          "postgres"
+        ]
       },
       "files": [
         {
@@ -1103,7 +1136,9 @@
       "type": "registry:block",
       "title": "Feature 06",
       "description": "A 4-step process section with badges, icons/images, and step indicators",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "categories": [
         "feature"
@@ -1172,9 +1207,15 @@
       "type": "registry:block",
       "title": "Feature 09",
       "description": "An integrations grid with icon cards in a 3x2 layout and social proof ratings",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["https://shadcnship.com/r/social-icons.json"],
-      "categories": ["feature"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "categories": [
+        "feature"
+      ],
       "meta": {
         "image": "/r/previews/feature-09.webp"
       },
@@ -1216,7 +1257,9 @@
       "type": "registry:block",
       "title": "Comparison 01",
       "description": "Product comparison table with images, feature rows, checkmarks, and color swatches",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "categories": [
         "comparison"
@@ -1237,7 +1280,9 @@
       "type": "registry:block",
       "title": "Logo 02",
       "description": "Client logo grid with industry/technology filters and featured case study cards",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "categories": [
         "logo"
@@ -1250,6 +1295,29 @@
           "path": "src/registry/blocks/logo-02/logo.tsx",
           "type": "registry:component",
           "target": "components/logo-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-compare",
+      "type": "registry:block",
+      "title": "Image Compare",
+      "description": "A before/after image slider — drag the divider to compare both sides in real time",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/image-compare.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/image-compare/output-showcase.tsx",
+          "type": "registry:component",
+          "target": "components/image-compare.tsx"
         }
       ]
     }
