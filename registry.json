@@ -556,6 +556,31 @@
       ]
     },
     {
+      "name": "testimonial-03",
+      "type": "registry:block",
+      "title": "Testimonial 03",
+      "description": "A two-column testimonial carousel with prev/next navigation and portrait image cards",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "categories": [
+        "testimonial"
+      ],
+      "meta": {
+        "image": "/r/previews/testimonial-03.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-03/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-03.tsx"
+        }
+      ]
+    },
+    {
       "name": "stat-01",
       "type": "registry:block",
       "title": "Stat 01",
