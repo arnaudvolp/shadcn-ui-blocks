@@ -1278,6 +1278,27 @@
       ]
     },
     {
+      "name": "feature-12",
+      "type": "registry:block",
+      "title": "Feature 12",
+      "description": "A feature section with a large clickable title list on the left and an image with description on the right that updates on selection",
+      "dependencies": [],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-12.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-12/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-12.tsx"
+        }
+      ]
+    },
+    {
       "name": "comparison-01",
       "type": "registry:block",
       "title": "Comparison 01",
