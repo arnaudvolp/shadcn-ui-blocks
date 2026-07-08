@@ -14,6 +14,7 @@ interface Hero06Props {
   primaryButton?: { text: string; url?: string };
   secondaryButton?: { text: string; url?: string };
   backgroundImage?: string;
+  backgroundImageDark?: string;
   className?: string;
 }
 
@@ -28,31 +29,40 @@ const Hero06 = ({
   primaryButton = { text: "Get started", url: "#" },
   secondaryButton = { text: "Watch demo", url: "#" },
   backgroundImage = "/images/backgrounds/background-1.webp",
+  backgroundImageDark = "/images/backgrounds/background-1-dark.webp",
   className,
 }: Hero06Props) => {
   return (
     <section
       className={cn(
-        "relative flex min-h-screen w-full items-center overflow-hidden bg-cover bg-center py-16 md:py-24",
+        "relative flex min-h-screen w-full items-center overflow-hidden py-16 md:py-24",
         className,
       )}
-      style={
-        backgroundImage
-          ? { backgroundImage: `url(${backgroundImage})` }
-          : undefined
-      }
     >
-      <div className="container mx-auto px-6">
-        <div className="flex h-full flex-col items-center gap-4 text-center">
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 bg-cover bg-center dark:hidden"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
+      {backgroundImageDark && (
+        <div
+          className="absolute inset-0 hidden bg-cover bg-center dark:block"
+          style={{ backgroundImage: `url(${backgroundImageDark})` }}
+        />
+      )}
+
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="flex flex-col items-center gap-4 text-center">
           {badge && (
             <Badge
               variant="outline"
-              className="gap-2 border border-border py-1 pr-3"
+              className="gap-2 border border-border py-1 pr-3 pl-1"
               asChild
             >
               <a href={badge.url || "#"}>
                 {badge.tag && (
-                  <span className="rounded bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
+                  <span className="rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
                     {badge.tag}
                   </span>
                 )}
