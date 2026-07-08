@@ -136,6 +136,32 @@
       ]
     },
     {
+      "name": "hero-06",
+      "type": "registry:block",
+      "title": "Hero 06",
+      "description": "A full-screen centered hero with background image, announcement badge, and CTA buttons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "categories": [
+        "hero"
+      ],
+      "meta": {
+        "image": "/r/previews/hero-06.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-06/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-06.tsx"
+        }
+      ]
+    },
+    {
       "name": "feature-01",
       "type": "registry:block",
       "title": "Feature 01",
