@@ -27,7 +27,7 @@ const Hero06 = ({
   description = "Pre-built landing page components for React. Copy, paste, and customize to ship your product faster.",
   primaryButton = { text: "Get started", url: "#" },
   secondaryButton = { text: "Watch demo", url: "#" },
-  backgroundImage = "/images/placeholders/hero-architecture-9.webp",
+  backgroundImage = "/images/backgrounds/background-1.webp",
   className,
 }: Hero06Props) => {
   return (
@@ -50,7 +50,7 @@ const Hero06 = ({
               className="gap-2 border border-border py-1 pr-3"
               asChild
             >
-              <a href={badge.url}>
+              <a href={badge.url || "#"}>
                 {badge.tag && (
                   <span className="rounded bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
                     {badge.tag}
@@ -62,7 +62,7 @@ const Hero06 = ({
             </Badge>
           )}
 
-          <h1 className="text-4xl leading-tight font-medium tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-5xl text-4xl leading-tight font-medium tracking-tight md:text-5xl lg:text-6xl">
             {title}
           </h1>
 
@@ -73,12 +73,12 @@ const Hero06 = ({
           <div className="grid w-full grid-cols-1 gap-4 sm:w-fit sm:grid-cols-2">
             {primaryButton && (
               <Button size="lg" variant="default" className="w-full" asChild>
-                <a href={primaryButton.url}>{primaryButton.text}</a>
+                <a href={primaryButton.url || "#"}>{primaryButton.text}</a>
               </Button>
             )}
             {secondaryButton && (
               <Button size="lg" variant="outline" className="w-full" asChild>
-                <a href={secondaryButton.url}>
+                <a href={secondaryButton.url || "#"}>
                   {secondaryButton.text}
                   <Play className="size-4" />
                 </a>
