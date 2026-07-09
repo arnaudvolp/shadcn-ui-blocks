@@ -9,8 +9,7 @@
   "registryDependencies": [
     "button",
     "sheet",
-    "navigation-menu",
-    "accordion"
+    "navigation-menu"
   ],
   "files": [
     {

@@ -6,7 +6,9 @@
   "dependencies": [
     "lucide-react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://shadcnship.com/r/social-icons.json"
+  ],
   "files": [
     {
       "path": "src/registry/blocks/feature-09/feature.tsx",

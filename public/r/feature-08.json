@@ -6,7 +6,9 @@
   "dependencies": [
     "lucide-react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
   "files": [
     {
       "path": "src/registry/blocks/feature-08/feature.tsx",

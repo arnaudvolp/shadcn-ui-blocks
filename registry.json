@@ -680,6 +680,30 @@
       ]
     },
     {
+      "name": "stat-04",
+      "type": "registry:block",
+      "title": "Stat 04",
+      "description": "A stats section with minimal navbar, large headline, and icons orbiting a center avatar",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-04.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-04/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-04.tsx"
+        }
+      ]
+    },
+    {
       "name": "logo-01",
       "type": "registry:block",
       "title": "Logo 01",
@@ -1325,6 +1349,76 @@
       ]
     },
     {
+      "name": "feature-13",
+      "type": "registry:block",
+      "title": "Feature 13",
+      "description": "A how-it-works section with a 3-card carousel, progress tab bar, and active step details",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-13.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-13/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-14",
+      "type": "registry:block",
+      "title": "Feature 14",
+      "description": "A how-it-works section with centered header and a 2-column grid of image cards",
+      "dependencies": [],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-14.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-14/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-15",
+      "type": "registry:block",
+      "title": "Feature 15",
+      "description": "A centered feature section with badge, phone mockup on a dot pattern background, and highlighted description",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "https://magicui.design/r/iphone.json"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-15.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-15/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-15.tsx"
+        }
+      ]
+    },
+    {
       "name": "comparison-01",
       "type": "registry:block",
       "title": "Comparison 01",
@@ -1374,7 +1468,7 @@
       "name": "image-compare",
       "type": "registry:block",
       "title": "Image Compare",
-      "description": "A before/after image slider — drag the divider to compare both sides in real time",
+      "description": "A before/after image slider \u2014 drag the divider to compare both sides in real time",
       "dependencies": [
         "lucide-react"
       ],
