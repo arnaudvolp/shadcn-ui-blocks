@@ -77,7 +77,7 @@ const Comparison02 = ({
             {/* Round icon + percentage badge at the top of the fill */}
             <div
               className={cn(
-                "flex w-fit items-center gap-2 rounded-full py-1.5 pr-4 pl-1.5",
+                "flex w-full items-center gap-2 rounded-full py-1.5 pr-4 pl-1.5",
                 bar.featured
                   ? "bg-primary-foreground/20"
                   : "bg-background/20",
