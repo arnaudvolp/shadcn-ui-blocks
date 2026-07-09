@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 
 interface Stat06Item {
   value: string;
+  /** 0-100 — drives the card height: close to 0 = tallest, close to 100 = shortest */
+  percent: number;
   description: React.ReactNode;
 }
 
@@ -17,39 +19,38 @@ interface Stat06Props {
 
 const defaultStats: [Stat06Item, Stat06Item, Stat06Item] = [
   {
-    value: "50+",
+    value: "98%",
+    percent: 98,
     description: (
       <>
-        Our library covers heroes, features, pricing and more, showcasing our
-        expertise in{" "}
+        Our library has produced many blocks that have been shipped live,
+        showcasing our expertise in{" "}
         <strong className="font-medium text-background">
-          production-ready blocks
+          delivering high-quality
         </strong>
         .
       </>
     ),
   },
   {
-    value: "1000+",
+    value: "64%",
+    percent: 64,
     description: (
       <>
-        Developers build with our components, thanks to{" "}
-        <strong className="font-medium text-background">
-          clean TypeScript APIs
-        </strong>{" "}
-        and a consistent design system.
+        Most developers using our components{" "}
+        <strong className="font-medium text-background">ship faster</strong>,
+        thanks to clean TypeScript APIs and a consistent design system.
       </>
     ),
   },
   {
-    value: "100%",
+    value: "0%",
+    percent: 0,
     description: (
       <>
-        Our blocks are{" "}
-        <strong className="font-medium text-background">
-          free and open source
-        </strong>
-        , dedicated to helping you ship polished landing pages faster.
+        Our blocks <strong className="font-medium text-background">never lock you in</strong>{" "}
+        and are dedicated to staying free and open source — copy the code and
+        own it.
       </>
     ),
   },
@@ -80,12 +81,15 @@ const Stat06 = ({
         </p>
       </div>
 
-      {/* Dark stat cards with hatch texture */}
-      <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3">
+      {/* Dark stat cards with hatch texture — the closer the stat is to 0, the taller the card */}
+      <div className="mt-12 grid items-start gap-4 md:mt-16 md:grid-cols-3">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="relative flex min-h-56 flex-col justify-end overflow-hidden rounded-xl bg-foreground p-6 text-background"
+            className="relative flex flex-col justify-end overflow-hidden rounded-xl bg-foreground p-6 text-background"
+            style={{
+              minHeight: `${Math.round(200 + ((100 - Math.min(Math.max(stat.percent, 0), 100)) / 100) * 120)}px`,
+            }}
           >
             <div className="absolute inset-0" style={hatchPattern} />
             <div className="relative">

@@ -45,7 +45,7 @@ const Comparison02 = ({
     </div>
 
     {/* Bars */}
-    <div className="mx-auto grid h-80 max-w-4xl grid-cols-2 items-end gap-x-4 gap-y-10 md:h-96 md:grid-cols-4 md:gap-6">
+    <div className="grid h-80 w-full grid-cols-2 items-end gap-x-4 gap-y-10 md:h-96 md:grid-cols-4 md:gap-6">
       {bars.map((bar) => (
         <div key={bar.name} className="relative flex h-full flex-col">
           {/* Hatched track */}
