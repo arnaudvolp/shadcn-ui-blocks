@@ -704,6 +704,57 @@
       ]
     },
     {
+      "name": "stat-05",
+      "type": "registry:block",
+      "title": "Stat 05",
+      "description": "A split stats section with badge, title, CTA link, and avatars on the left and an asymmetric grid of metric cards on the right",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "avatar"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-05.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-05/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-06",
+      "type": "registry:block",
+      "title": "Stat 06",
+      "description": "A stats section in a rounded card with intro paragraph, dark hatched metric cards, and an outline pill button",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-06.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-06/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-06.tsx"
+        }
+      ]
+    },
+    {
       "name": "logo-01",
       "type": "registry:block",
       "title": "Logo 01",
@@ -1419,6 +1470,29 @@
       ]
     },
     {
+      "name": "feature-16",
+      "type": "registry:block",
+      "title": "Feature 16",
+      "description": "A two-column feature section with labels, titles, learn-more links, and visual cards below",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-16.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-16/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-16.tsx"
+        }
+      ]
+    },
+    {
       "name": "comparison-01",
       "type": "registry:block",
       "title": "Comparison 01",
@@ -1438,6 +1512,29 @@
           "path": "src/registry/blocks/comparison-01/comparison.tsx",
           "type": "registry:component",
           "target": "components/comparison-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison-02",
+      "type": "registry:block",
+      "title": "Comparison 02",
+      "description": "A competitor comparison with vertical pill bars, hatched tracks, and a highlighted featured bar with tooltip",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "comparison"
+      ],
+      "meta": {
+        "image": "/r/previews/comparison-02.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/comparison-02/comparison.tsx",
+          "type": "registry:component",
+          "target": "components/comparison-02.tsx"
         }
       ]
     },
