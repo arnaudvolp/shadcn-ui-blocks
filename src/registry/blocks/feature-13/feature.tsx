@@ -20,23 +20,23 @@ interface Feature13Props {
 
 const defaultSteps: Feature13Step[] = [
   {
-    title: "Connect your data",
+    title: "Copy & Paste Ready",
     description:
-      "Forget about outdated applications. Secure, live data measures the health of your business, so you get the capital you deserve.",
+      "Every component is ready to use. Just copy the code and paste it into your project.",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
   },
   {
-    title: "Get your offer",
+    title: "Fully Customizable",
     description:
-      "Our platform analyzes your business in real time and generates a tailored offer in minutes — no paperwork, no waiting.",
+      "Built with Tailwind CSS, every component can be easily modified to match your brand.",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
   },
   {
-    title: "Grow your business",
+    title: "TypeScript First",
     description:
-      "Receive your funds and put them to work immediately. Track everything from a single, simple dashboard.",
+      "All components are fully typed with TypeScript for better developer experience.",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp",
   },
@@ -46,8 +46,8 @@ const defaultSteps: Feature13Step[] = [
 const SLIDE_WIDTH = 70;
 
 const Feature13 = ({
-  label = "Simple and seamless",
-  title = "How it works",
+  label = "Features",
+  title = "Everything You Need to Build Faster",
   steps = defaultSteps,
   className,
 }: Feature13Props) => {

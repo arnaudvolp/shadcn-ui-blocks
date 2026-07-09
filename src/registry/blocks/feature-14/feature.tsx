@@ -16,25 +16,25 @@ interface Feature14Props {
 
 const defaultItems: Feature14Item[] = [
   {
-    title: "Curated Wine Selection",
+    title: "Copy & Paste Ready",
     description:
-      "Our advanced AI learns from your preferences, offering recommendations based on flavor profiles, regions, and vintages most likely to suit your taste.",
+      "Every component is ready to use. Just copy the code and paste it into your project.",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
   },
   {
-    title: "Expert Food Pairings",
+    title: "Fully Customizable",
     description:
-      "Enter any dish or ingredient, and our AI will suggest the perfect wine to complement it. Reverse pairings are also available.",
+      "Built with Tailwind CSS, every component can be easily modified to match your brand.",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
   },
 ];
 
 const Feature14 = ({
-  label = "How it Works",
-  title = "The Perfect Wine,\nTailored to You",
-  description = "Our AI combines centuries of viniculture knowledge with cutting-edge algorithms to offer recommendations that suit your unique tastes and lifestyle. Here's how we transform your wine journey:",
+  label = "Features",
+  title = "Everything You Need\nto Build Faster",
+  description = "Production-ready blocks built with shadcn/ui and Tailwind CSS. Copy, customize, and ship.",
   items = defaultItems,
   className,
 }: Feature14Props) => (

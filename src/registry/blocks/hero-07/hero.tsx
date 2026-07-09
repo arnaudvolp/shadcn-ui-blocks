@@ -13,19 +13,17 @@ interface Hero07Props {
 
 const Hero07 = ({
   badge = {
-    text: "Sell Everywhere",
+    text: "Production-ready components",
     icon: <Sparkles className="size-3.5" />,
     url: "#",
   },
-  title = "Run your business effortlessly,\nanytime and anywhere!",
+  title = "Shadcn UI Blocks,\nCopy & Customize",
   description = (
     <>
-      Manage everything effortlessly from your pocket with the{" "}
-      <strong className="font-semibold text-foreground">powerful</strong>,{" "}
-      <strong className="font-semibold text-foreground">full-featured</strong>{" "}
-      mobile app, keeping your store running{" "}
-      <strong className="font-semibold text-foreground">smoothly</strong>{" "}
-      anywhere.
+      Pre-built landing page components for React. Just{" "}
+      <strong className="font-semibold text-foreground">copy the code</strong>{" "}
+      and focus on what matters —{" "}
+      <strong className="font-semibold text-foreground">your product</strong>.
     </>
   ),
   img = "https://www.shadcnship.com/images/image-preview.webp",

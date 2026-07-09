@@ -25,12 +25,12 @@ interface Stat04Props {
 
 const Stat04 = ({
   links = [
-    { text: "Platform", url: "#" },
-    { text: "Company", url: "#" },
-    { text: "Insights", url: "#" },
-    { text: "Contact", url: "#" },
+    { text: "Components", url: "#" },
+    { text: "Templates", url: "#" },
+    { text: "Docs", url: "#" },
+    { text: "Pricing", url: "#" },
   ],
-  title = "Over 10 Billion usage lines\nprocessed monthly",
+  title = "Over 50+ ready-to-use blocks\ntrusted by 1000+ developers",
   avatar = {
     src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
     fallback: "SC",
