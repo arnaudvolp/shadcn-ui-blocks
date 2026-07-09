@@ -16,7 +16,6 @@ interface OrbitIcon {
 }
 
 interface Stat04Props {
-  links?: { text: string; url?: string }[];
   title?: string;
   avatar?: { src: string; fallback: string };
   icons?: OrbitIcon[];
@@ -24,12 +23,6 @@ interface Stat04Props {
 }
 
 const Stat04 = ({
-  links = [
-    { text: "Components", url: "#" },
-    { text: "Templates", url: "#" },
-    { text: "Docs", url: "#" },
-    { text: "Pricing", url: "#" },
-  ],
   title = "Over 50+ ready-to-use blocks\ntrusted by 1000+ developers",
   avatar = {
     src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
@@ -58,23 +51,8 @@ const Stat04 = ({
 
   return (
     <section className={cn("container mx-auto px-8 py-12 md:py-24", className)}>
-      {/* Minimal top navbar */}
-      {links && links.length > 0 && (
-        <nav className="flex items-center justify-center gap-6 md:gap-8">
-          {links.map((link) => (
-            <a
-              key={link.text}
-              href={link.url}
-              className="text-xs font-medium tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground"
-            >
-              {link.text}
-            </a>
-          ))}
-        </nav>
-      )}
-
       {/* Large stat headline */}
-      <h1 className="mx-auto mt-12 max-w-3xl text-center text-4xl leading-tight font-medium tracking-tight whitespace-pre-line md:mt-16 md:text-5xl">
+      <h1 className="mx-auto max-w-3xl text-center text-4xl leading-tight font-medium tracking-tight whitespace-pre-line md:text-5xl">
         {title}
       </h1>
 

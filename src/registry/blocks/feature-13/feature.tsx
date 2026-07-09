@@ -95,10 +95,10 @@ const Feature13 = ({
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="aspect-video w-full object-cover"
+                    className="aspect-square w-full object-cover md:aspect-video"
                   />
                 ) : (
-                  <div className="aspect-video w-full" />
+                  <div className="aspect-square w-full md:aspect-video" />
                 )}
               </button>
             </div>

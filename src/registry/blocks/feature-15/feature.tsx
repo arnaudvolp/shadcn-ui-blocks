@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Iphone } from "@/components/ui/iphone";
 
-interface Hero07Props {
+interface Feature15Props {
   badge?: { text: string; icon?: React.ReactNode; url?: string };
   title?: string;
   description?: React.ReactNode;
@@ -11,7 +11,7 @@ interface Hero07Props {
   className?: string;
 }
 
-const Hero07 = ({
+const Feature15 = ({
   badge = {
     text: "Production-ready components",
     icon: <Sparkles className="size-3.5" />,
@@ -28,7 +28,7 @@ const Hero07 = ({
   ),
   img = "https://www.shadcnship.com/images/image-preview.webp",
   className,
-}: Hero07Props) => {
+}: Feature15Props) => {
   return (
     <section
       className={cn(
@@ -66,9 +66,9 @@ const Hero07 = ({
             </Badge>
           )}
 
-          <h1 className="max-w-5xl text-4xl leading-tight font-semibold tracking-tight whitespace-pre-line md:text-5xl lg:text-6xl">
+          <h2 className="max-w-5xl text-4xl leading-tight font-semibold tracking-tight whitespace-pre-line md:text-5xl lg:text-6xl">
             {title}
-          </h1>
+          </h2>
 
           {/* Phone mockup, cropped at the bottom */}
           <div className="mt-6 max-h-64 w-56 overflow-hidden md:max-h-80 md:w-72">
@@ -100,4 +100,4 @@ const Hero07 = ({
   );
 };
 
-export default Hero07;
+export default Feature15;
