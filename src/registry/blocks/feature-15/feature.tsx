@@ -1,7 +1,6 @@
 import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { Iphone } from "@/components/ui/iphone";
 
 interface Feature15Props {
   badge?: { text: string; icon?: React.ReactNode; url?: string };
@@ -14,10 +13,9 @@ interface Feature15Props {
 const Feature15 = ({
   badge = {
     text: "Production-ready components",
-    icon: <Sparkles className="size-3.5" />,
     url: "#",
   },
-  title = "Shadcn UI Blocks,\nCopy & Customize",
+  title = "Shadcn UI Blocks, Copy & Customize",
   description = (
     <>
       Pre-built landing page components for React. Just{" "}
@@ -26,7 +24,7 @@ const Feature15 = ({
       <strong className="font-semibold text-foreground">your product</strong>.
     </>
   ),
-  img = "https://www.shadcnship.com/images/image-preview.webp",
+  img = "/images/mockups/iphone-crop.webp",
   className,
 }: Feature15Props) => {
   return (
@@ -51,11 +49,11 @@ const Feature15 = ({
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6">
         <div className="flex flex-col items-center gap-4 text-center">
           {badge && (
             <Badge
-              variant="secondary"
+              variant="outline"
               className="gap-1.5 border border-border py-1"
               asChild
             >
@@ -66,13 +64,17 @@ const Feature15 = ({
             </Badge>
           )}
 
-          <h2 className="max-w-5xl text-4xl leading-tight font-semibold tracking-tight whitespace-pre-line md:text-5xl lg:text-6xl">
+          <h2 className="max-w-5xl text-4xl leading-tight font-semibold tracking-tight whitespace-pre-line md:text-5xl">
             {title}
           </h2>
 
-          {/* Phone mockup, cropped at the bottom */}
-          <div className="mt-6 max-h-64 w-56 overflow-hidden md:max-h-80 md:w-72">
-            <Iphone src={img} />
+          {/* Product image, centered and fully visible */}
+          <div className="flex h-64 w-full max-w-lg items-center justify-center overflow-hidden md:h-80">
+            <img
+              src={img}
+              alt=""
+              className="max-h-full max-w-full object-contain"
+            />
           </div>
 
           <p className="max-w-xl text-muted-foreground md:text-lg">

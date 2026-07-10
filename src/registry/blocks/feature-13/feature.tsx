@@ -130,8 +130,8 @@ const Feature13 = ({
         className="mx-auto mt-10 flex items-start gap-4 px-2 md:px-3"
         style={{ width: `${SLIDE_WIDTH}%` }}
       >
-        <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-          {activeStep.icon ?? <ArrowUpRight className="size-5" />}
+        <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground md:size-10">
+          {activeStep.icon ?? <ArrowUpRight className="size-3 md:size-5" />}
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl font-medium tracking-tight md:text-3xl">
