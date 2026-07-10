@@ -33,7 +33,7 @@ const defaultStats: [Stat05Item, Stat05Item, Stat05Item] = [
     icon: <Users className="size-4" />,
     label: "Developers Using",
     value: "1000+",
-    description: "Building landing pages faster",
+    description: "Building  faster",
   },
   {
     icon: <Package className="size-4" />,
@@ -76,7 +76,10 @@ const Stat05 = ({
       <div className="flex flex-col">
         <div className="flex flex-col items-start gap-4">
           {badge && (
-            <Badge variant="secondary" className="gap-1.5 border border-border py-1">
+            <Badge
+              variant="outline"
+              className="gap-1.5 border border-border py-1"
+            >
               {badge.icon}
               {badge.text}
             </Badge>
@@ -130,7 +133,7 @@ const Stat05 = ({
               <span className="text-sm font-medium">{stat.label}</span>
             </div>
             <div>
-              <p className="text-5xl font-medium tracking-tight md:text-6xl">
+              <p className="text-3xl font-medium tracking-tight md:text-5xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">

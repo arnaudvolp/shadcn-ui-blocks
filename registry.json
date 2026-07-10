@@ -1516,29 +1516,6 @@
       ]
     },
     {
-      "name": "comparison-02",
-      "type": "registry:block",
-      "title": "Comparison 02",
-      "description": "A competitor comparison with vertical pill bars, hatched tracks, and a highlighted featured bar with tooltip",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [],
-      "categories": [
-        "comparison"
-      ],
-      "meta": {
-        "image": "/r/previews/comparison-02.webp"
-      },
-      "files": [
-        {
-          "path": "src/registry/blocks/comparison-02/comparison.tsx",
-          "type": "registry:component",
-          "target": "components/comparison-02.tsx"
-        }
-      ]
-    },
-    {
       "name": "logo-02",
       "type": "registry:block",
       "title": "Logo 02",

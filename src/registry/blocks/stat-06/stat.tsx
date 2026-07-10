@@ -48,18 +48,16 @@ const defaultStats: [Stat06Item, Stat06Item, Stat06Item] = [
     percent: 0,
     description: (
       <>
-        Our blocks <strong className="font-medium text-background">never lock you in</strong>{" "}
+        Our blocks{" "}
+        <strong className="font-medium text-background">
+          never lock you in
+        </strong>{" "}
         and are dedicated to staying free and open source — copy the code and
         own it.
       </>
     ),
   },
 ];
-
-const hatchPattern = {
-  backgroundImage:
-    "repeating-linear-gradient(135deg, rgb(255 255 255 / 0.05) 0px, rgb(255 255 255 / 0.05) 1px, transparent 1px, transparent 8px)",
-};
 
 const Stat06 = ({
   label = { text: "Component library built on", highlight: "shadcn/ui" },
@@ -86,12 +84,12 @@ const Stat06 = ({
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="relative flex flex-col justify-end overflow-hidden rounded-xl bg-foreground p-6 text-background"
+            className="relative flex flex-col justify-end overflow-hidden rounded-xl bg-primary p-6 text-background"
             style={{
               minHeight: `${Math.round(200 + ((100 - Math.min(Math.max(stat.percent, 0), 100)) / 100) * 120)}px`,
             }}
           >
-            <div className="absolute inset-0" style={hatchPattern} />
+            <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.05)_0px,rgb(255_255_255/0.05)_1px,transparent_1px,transparent_8px)] dark:bg-[repeating-linear-gradient(135deg,rgb(0_0_0/0.05)_0px,rgb(0_0_0/0.05)_1px,transparent_1px,transparent_8px)]" />
             <div className="relative">
               <p className="text-5xl font-medium tracking-tight md:text-6xl">
                 {stat.value}
@@ -106,7 +104,11 @@ const Stat06 = ({
 
       {/* Pill outline button bottom left */}
       {button && (
-        <Button variant="outline" className="mt-8 rounded-full md:mt-12" asChild>
+        <Button
+          variant="outline"
+          className="mt-8 rounded-full md:mt-12"
+          asChild
+        >
           <a href={button.url}>
             {button.text}
             <ArrowRight className="size-4" />

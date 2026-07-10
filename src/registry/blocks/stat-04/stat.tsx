@@ -25,7 +25,7 @@ interface Stat04Props {
 const Stat04 = ({
   title = "Over 50+ ready-to-use blocks\ntrusted by 1000+ developers",
   avatar = {
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+    src: "https://shadcnship.com/images/placeholders/hero-architecture-8.webp",
     fallback: "SC",
   },
   icons = [
