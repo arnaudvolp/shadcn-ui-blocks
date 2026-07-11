@@ -45,23 +45,23 @@ const Feature18 = ({
   link = { text: "View More", url: "#" },
   className,
 }: Feature18Props) => (
-  <section className={cn("bg-foreground py-12 md:py-24", className)}>
+  <section className={cn("w-full py-12 md:py-24", className)}>
     <div className="container mx-auto px-8">
       {/* Gradient title with decorative icon */}
       <div className="flex items-start gap-4">
-        <Plus className="mt-2 size-5 shrink-0 text-background/50" />
-        <h2 className="bg-linear-to-r from-background to-background/60 bg-clip-text text-3xl leading-tight font-medium tracking-tight whitespace-pre-line text-transparent md:text-4xl">
+        <Plus className="mt-2 size-5 shrink-0 text-muted-foreground" />
+        <h2 className="bg-linear-to-r from-foreground to-foreground/60 bg-clip-text text-3xl leading-tight font-medium tracking-tight whitespace-pre-line text-transparent md:text-4xl">
           {title}
         </h2>
       </div>
 
-      {/* White cards */}
+      {/* Cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {cards.map((card, index) => (
           <a
             key={index}
             href={card.url}
-            className="group flex flex-col overflow-hidden rounded-xl bg-background text-foreground"
+            className="group flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground"
           >
             <div className="flex flex-1 flex-col p-6">
               <p className="text-xs font-semibold tracking-widest text-primary uppercase">
@@ -94,7 +94,7 @@ const Feature18 = ({
       {link && (
         <a
           href={link.url}
-          className="group mt-10 inline-flex items-center gap-3 text-background"
+          className="group mt-10 inline-flex items-center gap-3"
         >
           <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:translate-x-0.5">
             <ArrowRight className="size-4" />
