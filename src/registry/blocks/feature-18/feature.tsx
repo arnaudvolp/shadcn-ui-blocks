@@ -18,21 +18,24 @@ interface Feature18Props {
 const defaultCards: Feature18Card[] = [
   {
     category: "Components",
-    title: "Copy & Paste Ready",
+    title:
+      "How to ship a complete landing page with copy & paste ready blocks?",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
     url: "#",
   },
   {
     category: "Customization",
-    title: "Fully Customizable",
+    title:
+      "How to easily match your brand when every component is built with Tailwind CSS?",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
     url: "#",
   },
   {
     category: "Developer Experience",
-    title: "TypeScript First",
+    title:
+      "How to build faster with components fully typed with TypeScript?",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp",
     url: "#",
