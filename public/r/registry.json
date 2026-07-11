@@ -478,6 +478,32 @@
       ]
     },
     {
+      "name": "cta-05",
+      "type": "registry:block",
+      "title": "CTA 05",
+      "description": "A centered CTA with a fanned stack of rotated photos, badge, contrast title, and pill button",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "categories": [
+        "cta"
+      ],
+      "meta": {
+        "image": "/r/previews/cta-05.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-05/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-05.tsx"
+        }
+      ]
+    },
+    {
       "name": "faq-01",
       "type": "registry:block",
       "title": "FAQ 01",
@@ -1489,6 +1515,52 @@
           "path": "src/registry/blocks/feature-16/feature.tsx",
           "type": "registry:component",
           "target": "components/feature-16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-17",
+      "type": "registry:block",
+      "title": "Feature 17",
+      "description": "An alternating 2-column feature grid with thin borders, text and illustration cells, and category tags",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-17.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-17/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-18",
+      "type": "registry:block",
+      "title": "Feature 18",
+      "description": "A dark case-studies section with gradient title, white cards with category labels and plus buttons, and a view-all link",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-18.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-18/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-18.tsx"
         }
       ]
     },
