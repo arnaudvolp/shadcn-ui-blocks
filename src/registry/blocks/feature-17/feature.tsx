@@ -20,31 +20,31 @@ const defaultItems: Feature17Item[] = [
   {
     icon: <Blocks className="size-4" />,
     label: "Components",
-    title: "Modular by design",
+    title: "Copy & Paste Ready",
     description:
-      "Decoupled blocks covering heroes, features, pricing, and more. Adopt incrementally, use standalone, or mix with your own sections.",
+      "Every component is ready to use. Just copy the code and paste it into your project.",
     link: { text: "Learn More", url: "#" },
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
-    tags: ["Hero & CTA", "Features", "Pricing", "Testimonials", "Other"],
+    tags: ["Hero", "Features", "Pricing", "Testimonials", "FAQ"],
   },
   {
     icon: <SquareTerminal className="size-4" />,
-    label: "Framework",
-    title: "Build any landing page",
+    label: "Customization",
+    title: "Fully Customizable",
     description:
-      "Built with shadcn/ui and Tailwind CSS so you can compose any custom section. Add your own data, variants, and interactions with typed props.",
+      "Built with Tailwind CSS, every component can be easily modified to match your brand.",
     link: { text: "Learn More", url: "#" },
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
   },
   {
     icon: <Cloud className="size-4" />,
-    label: "Registry",
-    title: "Tailored setup for your project",
+    label: "Developer Experience",
+    title: "TypeScript First",
     description:
-      "Pre-configured registry to install blocks with the shadcn CLI. Copy the code into your repo, customize every detail, and ship faster.",
-    link: { text: "Get started", url: "#" },
+      "All components are fully typed with TypeScript for better developer experience.",
+    link: { text: "Learn More", url: "#" },
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp",
   },

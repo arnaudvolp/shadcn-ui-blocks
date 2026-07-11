@@ -37,16 +37,16 @@ const stackClasses = [
 
 const Cta05 = ({
   images = defaultImages,
-  badge = { text: "50+ production-ready blocks" },
+  badge = { text: "Production-ready components" },
   title = (
     <>
-      We operate at the intersection of{" "}
+      Ship faster. Build better.{" "}
       <span className="text-muted-foreground">
-        design, speed, and developer experience.
+        Production-ready shadcn/ui blocks for your next project.
       </span>
     </>
   ),
-  button = { text: "Find your perfect block", url: "#" },
+  button = { text: "Get started now", url: "#" },
   className,
 }: Cta05Props) => (
   <section className={cn("container mx-auto px-8 py-12 md:py-24", className)}>

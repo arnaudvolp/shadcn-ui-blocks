@@ -17,22 +17,22 @@ interface Feature18Props {
 
 const defaultCards: Feature18Card[] = [
   {
-    category: "SaaS",
-    title: "How to ship a landing page in a single day?",
+    category: "Components",
+    title: "Copy & Paste Ready",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
     url: "#",
   },
   {
-    category: "E-commerce",
-    title: "How to durably cut development costs?",
+    category: "Customization",
+    title: "Fully Customizable",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
     url: "#",
   },
   {
-    category: "Agency",
-    title: "How to balance consistency and custom design?",
+    category: "Developer Experience",
+    title: "TypeScript First",
     image:
       "https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp",
     url: "#",
@@ -40,9 +40,9 @@ const defaultCards: Feature18Card[] = [
 ];
 
 const Feature18 = ({
-  title = "Our case studies:\nat the heart of every launch",
+  title = "Everything You Need\nto Build Faster",
   cards = defaultCards,
-  link = { text: "View all", url: "#" },
+  link = { text: "View More", url: "#" },
   className,
 }: Feature18Props) => (
   <section className={cn("bg-foreground py-12 md:py-24", className)}>
