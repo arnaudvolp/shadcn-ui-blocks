@@ -57,7 +57,7 @@ const Cta05 = ({
           <div
             key={index}
             className={cn(
-              "absolute size-40 overflow-hidden rounded-3xl border-6 border-background shadow-xl md:size-52",
+              "absolute size-40 overflow-hidden rounded-3xl border-6 border-background shadow-2xl md:size-52",
               stackClasses[index],
             )}
           >
