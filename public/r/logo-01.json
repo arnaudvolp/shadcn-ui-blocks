@@ -6,7 +6,8 @@
   "dependencies": [],
   "registryDependencies": [
     "card",
-    "https://magicui.design/r/marquee.json"
+    "https://magicui.design/r/marquee.json",
+    "https://shadcnship.com/r/social-icons.json"
   ],
   "files": [
     {

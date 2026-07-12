@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-14",
+  "title": "Feature 14",
+  "description": "A how-it-works section with centered header and a 2-column grid of image cards",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/blocks/feature-14/feature.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface Feature14Item {\n  title: string;\n  description: string;\n  image?: string;\n}\n\ninterface Feature14Props {\n  label?: string;\n  title?: string;\n  description?: string;\n  items?: Feature14Item[];\n  className?: string;\n}\n\nconst defaultItems: Feature14Item[] = [\n  {\n    title: \"Copy & Paste Ready\",\n    description:\n      \"Every component is ready to use. Just copy the code and paste it into your project.\",\n    image:\n      \"https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp\",\n  },\n  {\n    title: \"Fully Customizable\",\n    description:\n      \"Built with Tailwind CSS, every component can be easily modified to match your brand.\",\n    image:\n      \"https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp\",\n  },\n];\n\nconst Feature14 = ({\n  label = \"Features\",\n  title = \"Everything You Need\\nto Build Faster\",\n  description = \"Production-ready blocks built with shadcn/ui and Tailwind CSS. Copy, customize, and ship.\",\n  items = defaultItems,\n  className,\n}: Feature14Props) => (\n  <section className={cn(\"container mx-auto px-8 py-12 md:py-24\", className)}>\n    {/* Header */}\n    <div className=\"mb-12 flex flex-col items-center gap-2 text-center\">\n      <p className=\"text-sm font-semibold tracking-widest text-muted-foreground uppercase\">\n        {label}\n      </p>\n      <h2 className=\"text-4xl leading-tight font-medium tracking-tight whitespace-pre-line md:text-5xl\">\n        {title}\n      </h2>\n      <p className=\"max-w-xl text-muted-foreground md:text-lg\">{description}</p>\n    </div>\n\n    {/* 2-column grid */}\n    <div className=\"mx-auto grid max-w-5xl gap-6 md:grid-cols-2\">\n      {items.map((item, index) => (\n        <div\n          key={index}\n          className=\"flex flex-col items-center rounded-xl bg-muted/50 p-8 text-center md:p-10\"\n        >\n          <div className=\"w-full max-w-xs overflow-hidden rounded-xl bg-muted\">\n            {item.image ? (\n              <img\n                src={item.image}\n                alt={item.title}\n                className=\"aspect-square w-full object-cover\"\n              />\n            ) : (\n              <div className=\"aspect-square w-full\" />\n            )}\n          </div>\n          <h3 className=\"mt-8 text-xl font-medium tracking-tight\">\n            {item.title}\n          </h3>\n          <p className=\"mt-2 max-w-md text-sm text-muted-foreground\">\n            {item.description}\n          </p>\n        </div>\n      ))}\n    </div>\n  </section>\n);\n\nexport default Feature14;\nexport type { Feature14Props, Feature14Item };\n",
+      "type": "registry:component",
+      "target": "components/feature-14.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/feature-14.webp"
+  },
+  "categories": [
+    "feature"
+  ],
+  "type": "registry:block"
+}

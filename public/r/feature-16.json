@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-16",
+  "title": "Feature 16",
+  "description": "A two-column feature section with labels, titles, learn-more links, and visual cards below",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/blocks/feature-16/feature.tsx",
+      "content": "import { ArrowRight } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface Feature16Column {\n  label: string;\n  title: string;\n  description: string;\n  link?: { text: string; url?: string };\n  image?: string;\n}\n\ninterface Feature16Props {\n  columns?: [Feature16Column, Feature16Column];\n  className?: string;\n}\n\nconst defaultColumns: [Feature16Column, Feature16Column] = [\n  {\n    label: \"Copy & paste\",\n    title: \"Every component\\nready for production\",\n    description:\n      \"Speed up your workflow by making it simple to build your landing page. Every block is ready to use — just copy the code, paste it into your project, and it works out of the box with your existing shadcn/ui setup.\",\n    link: { text: \"Learn more\", url: \"#\" },\n    image:\n      \"https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp\",\n  },\n  {\n    label: \"Customization\",\n    title: \"Make every block\\nyour own\",\n    description:\n      \"Want to match your brand down to the last pixel? Built with Tailwind CSS and typed props, every component can be easily modified — swap colors, spacing, and copy without fighting CSS specificity.\",\n    link: { text: \"Learn more\", url: \"#\" },\n    image:\n      \"https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp\",\n  },\n];\n\nconst Feature16 = ({\n  columns = defaultColumns,\n  className,\n}: Feature16Props) => (\n  <section className={cn(\"container mx-auto px-8 py-12 md:py-24\", className)}>\n    <div className=\"grid gap-12 md:grid-cols-2 md:gap-16\">\n      {columns.map((column, index) => (\n        <div key={index} className=\"flex flex-col border-t pt-6\">\n          <p className=\"text-sm text-muted-foreground\">{column.label}</p>\n          <h3 className=\"mt-6 text-2xl leading-tight font-medium tracking-tight whitespace-pre-line md:text-3xl\">\n            {column.title}\n          </h3>\n          <p className=\"mt-4 max-w-md text-sm text-muted-foreground md:text-base\">\n            {column.description}\n          </p>\n          {column.link && (\n            <a\n              href={column.link.url}\n              className=\"mt-6 inline-flex items-center gap-1.5 text-sm font-medium hover:underline\"\n            >\n              {column.link.text}\n              <ArrowRight className=\"size-4\" />\n            </a>\n          )}\n          <div className=\"mt-8 overflow-hidden rounded-xl border bg-muted/30\">\n            {column.image ? (\n              <img\n                src={column.image}\n                alt={column.title}\n                className=\"aspect-4/3 w-full object-cover\"\n              />\n            ) : (\n              <div className=\"aspect-4/3 w-full\" />\n            )}\n          </div>\n        </div>\n      ))}\n    </div>\n  </section>\n);\n\nexport default Feature16;\nexport type { Feature16Props, Feature16Column };\n",
+      "type": "registry:component",
+      "target": "components/feature-16.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/feature-16.webp"
+  },
+  "categories": [
+    "feature"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cookie-01",
+  "title": "Cookie 01",
+  "description": "A floating cookie consent card with accept button and learn more link",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/cookie-01/cookie.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Cookie } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport { Card, CardContent } from \"@/components/ui/card\";\n\ninterface Cookie01Props {\n  description?: string;\n  learnMore?: {\n    text?: string;\n    url?: string;\n  };\n  acceptButton?: {\n    text?: string;\n  };\n  declineButton?: {\n    text?: string;\n  };\n  className?: string;\n}\n\nconst Cookie01 = ({\n  description = \"We use third-party cookies to personalize content, ads, and analyze site traffic.\",\n  learnMore = {\n    text: \"Learn more\",\n    url: \"#\",\n  },\n  acceptButton = {\n    text: \"Accept\",\n  },\n  declineButton = {\n    text: \"Decline\",\n  },\n  className,\n}: Cookie01Props) => {\n  const [visible, setVisible] = useState(true);\n\n  if (!visible) return null;\n\n  return (\n    <div\n      className={cn(\n        \"fixed bottom-0 z-50 w-full p-4 sm:right-4 sm:w-92\",\n        className,\n      )}\n    >\n      <Card className=\"rounded-md shadow-none\">\n        <CardContent className=\"flex flex-col items-center gap-5 p-6 text-center\">\n          <Cookie className=\"size-10 text-primary\" strokeWidth={1.5} />\n          <div className=\"flex flex-col items-center gap-2\">\n            <p className=\"text-sm text-muted-foreground\">{description}</p>\n            {learnMore && (\n              <a\n                href={learnMore.url}\n                className=\"text-sm font-medium underline underline-offset-4 transition-colors hover:text-muted-foreground\"\n              >\n                {learnMore.text}\n              </a>\n            )}\n          </div>\n          <div className=\"flex w-full gap-3\">\n            <Button className=\"flex-1\" onClick={() => setVisible(false)}>\n              {acceptButton.text}\n            </Button>\n            <Button\n              variant=\"outline\"\n              className=\"flex-1\"\n              onClick={() => setVisible(false)}\n            >\n              {declineButton.text}\n            </Button>\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  );\n};\n\nexport default Cookie01;\n",
+      "type": "registry:component",
+      "target": "components/cookie-01.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/cookie-01.webp"
+  },
+  "categories": [
+    "cookie"
+  ],
+  "type": "registry:block"
+}

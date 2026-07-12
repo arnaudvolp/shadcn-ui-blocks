@@ -136,6 +136,32 @@
       ]
     },
     {
+      "name": "hero-06",
+      "type": "registry:block",
+      "title": "Hero 06",
+      "description": "A full-screen centered hero with background image, announcement badge, and CTA buttons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "categories": [
+        "hero"
+      ],
+      "meta": {
+        "image": "/r/previews/hero-06.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-06/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-06.tsx"
+        }
+      ]
+    },
+    {
       "name": "feature-01",
       "type": "registry:block",
       "title": "Feature 01",
@@ -452,6 +478,32 @@
       ]
     },
     {
+      "name": "cta-05",
+      "type": "registry:block",
+      "title": "CTA 05",
+      "description": "A centered CTA with a fanned stack of rotated photos, badge, contrast title, and pill button",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "categories": [
+        "cta"
+      ],
+      "meta": {
+        "image": "/r/previews/cta-05.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/cta-05/cta.tsx",
+          "type": "registry:component",
+          "target": "components/cta-05.tsx"
+        }
+      ]
+    },
+    {
       "name": "faq-01",
       "type": "registry:block",
       "title": "FAQ 01",
@@ -650,6 +702,81 @@
           "path": "src/registry/blocks/stat-03/stat.tsx",
           "type": "registry:component",
           "target": "components/stat-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-04",
+      "type": "registry:block",
+      "title": "Stat 04",
+      "description": "A stats section with minimal navbar, large headline, and icons orbiting a center avatar",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-04.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-04/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-05",
+      "type": "registry:block",
+      "title": "Stat 05",
+      "description": "A split stats section with badge, title, CTA link, and avatars on the left and an asymmetric grid of metric cards on the right",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "avatar"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-05.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-05/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-06",
+      "type": "registry:block",
+      "title": "Stat 06",
+      "description": "A stats section in a rounded card with intro paragraph, dark hatched metric cards, and an outline pill button",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "categories": [
+        "stat"
+      ],
+      "meta": {
+        "image": "/r/previews/stat-06.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/stat-06/stat.tsx",
+          "type": "registry:component",
+          "target": "components/stat-06.tsx"
         }
       ]
     },
@@ -1299,6 +1426,145 @@
       ]
     },
     {
+      "name": "feature-13",
+      "type": "registry:block",
+      "title": "Feature 13",
+      "description": "A how-it-works section with a 3-card carousel, progress tab bar, and active step details",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-13.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-13/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-14",
+      "type": "registry:block",
+      "title": "Feature 14",
+      "description": "A how-it-works section with centered header and a 2-column grid of image cards",
+      "dependencies": [],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-14.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-14/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-15",
+      "type": "registry:block",
+      "title": "Feature 15",
+      "description": "A centered feature section with badge, phone mockup on a dot pattern background, and highlighted description",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "https://magicui.design/r/iphone.json"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-15.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-15/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-16",
+      "type": "registry:block",
+      "title": "Feature 16",
+      "description": "A two-column feature section with labels, titles, learn-more links, and visual cards below",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-16.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-16/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-17",
+      "type": "registry:block",
+      "title": "Feature 17",
+      "description": "An alternating 2-column feature grid with thin borders, text and illustration cells, and category tags",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-17.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-17/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-18",
+      "type": "registry:block",
+      "title": "Feature 18",
+      "description": "A dark case-studies section with gradient title, white cards with category labels and plus buttons, and a view-all link",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-18.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-18/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-18.tsx"
+        }
+      ]
+    },
+    {
       "name": "comparison-01",
       "type": "registry:block",
       "title": "Comparison 01",
@@ -1348,7 +1614,7 @@
       "name": "image-compare",
       "type": "registry:block",
       "title": "Image Compare",
-      "description": "A before/after image slider — drag the divider to compare both sides in real time",
+      "description": "A before/after image slider \u2014 drag the divider to compare both sides in real time",
       "dependencies": [
         "lucide-react"
       ],

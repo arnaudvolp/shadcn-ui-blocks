@@ -7,7 +7,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button"
+    "button",
+    "https://shadcnship.com/r/social-icons.json"
   ],
   "files": [
     {

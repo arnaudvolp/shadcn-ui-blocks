@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-03",
+  "title": "Stat 03",
+  "description": "A bento-grid stats section mixing images and metric cards",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/blocks/stat-03/stat.tsx",
+      "content": "import { Star } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface StatItem {\n  value: string;\n  text: string;\n  suffix?: string;\n  icon?: React.ReactNode;\n}\n\ninterface Stat03Props {\n  label?: string;\n  title?: string;\n  description?: string;\n  mainImage?: string;\n  secondaryImages?: [string, string];\n  stats?: [StatItem, StatItem, StatItem];\n  className?: string;\n}\n\nconst Stat03 = ({\n  label = \"Our Success\",\n  title = \"Performance Insights\",\n  description = \"Transform insights into action effortlessly with our intuitive SaaS platform. Elevate your user experiences and drive success.\",\n  mainImage = \"https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp\",\n  secondaryImages = [\n    \"https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp\",\n    \"https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp\",\n  ],\n  stats = [\n    { value: \"2M+\", text: \"Total Downloads\" },\n    {\n      value: \"98%\",\n      text: \"User Satisfaction Score\",\n      icon: <Star className=\"size-5 fill-foreground\" />,\n    },\n    { value: \"4.9\", text: \"Average Rating\", suffix: \"/ 5\" },\n  ],\n  className,\n}: Stat03Props) => (\n  <section className={cn(\"container mx-auto px-8 py-12 md:py-24\", className)}>\n    {/* Header */}\n    <div className=\"mb-12 flex flex-col items-center gap-2 text-center\">\n      <p className=\"text-sm font-semibold tracking-widest text-muted-foreground uppercase\">\n        {label}\n      </p>\n      <h2 className=\"text-4xl leading-tight font-medium tracking-tight md:text-5xl\">\n        {title}\n      </h2>\n      <p className=\"max-w-2xl text-muted-foreground md:text-lg\">\n        {description}\n      </p>\n    </div>\n\n    {/* Bento grid */}\n    <div className=\"mx-auto grid max-w-5xl auto-rows-[150px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4\">\n      {/* Main image — full width on mobile (row-span-2), col 1 on desktop */}\n      <div className=\"col-span-2 row-span-2 overflow-hidden rounded-xl md:col-span-1\">\n        <img src={mainImage} alt=\"\" className=\"size-full object-cover\" />\n      </div>\n\n      {/* Stat 1 — half width mobile, col 2 desktop */}\n      <div className=\"col-span-1 flex flex-col justify-between rounded-xl bg-muted p-4 md:p-5\">\n        <p className=\"text-sm text-muted-foreground\">{stats[0].text}</p>\n        <p className=\"text-3xl font-medium tracking-tight md:text-5xl\">\n          {stats[0].value}\n        </p>\n      </div>\n\n      {/* Stat 2 — half width mobile, col 3–4 desktop */}\n      <div className=\"col-span-1 flex flex-col justify-between rounded-xl bg-muted p-4 md:col-span-2 md:p-5\">\n        {stats[1].icon}\n        <div>\n          <p className=\"text-3xl font-medium tracking-tight md:text-5xl\">\n            {stats[1].value}\n          </p>\n          <p className=\"mt-1 text-sm text-muted-foreground\">{stats[1].text}</p>\n        </div>\n      </div>\n\n      {/* Stat 3 — half width mobile, col 2 desktop */}\n      <div className=\"col-span-1 flex flex-col justify-end rounded-xl bg-muted p-4 md:p-5\">\n        <p className=\"text-3xl font-medium tracking-tight md:text-5xl\">\n          {stats[2].value}\n          {stats[2].suffix && (\n            <span className=\"text-lg text-muted-foreground md:text-xl\">\n              {stats[2].suffix}\n            </span>\n          )}\n        </p>\n        <p className=\"mt-1 text-sm text-muted-foreground\">{stats[2].text}</p>\n      </div>\n\n      {/* Secondary image 1 — half width mobile, col 3 desktop */}\n      <div className=\"col-span-1 overflow-hidden rounded-xl\">\n        <img\n          src={secondaryImages[0]}\n          alt=\"\"\n          className=\"size-full object-cover\"\n        />\n      </div>\n\n      {/* Secondary image 2 — full width mobile, col 4 desktop */}\n      <div className=\"col-span-2 overflow-hidden rounded-xl md:col-span-1\">\n        <img\n          src={secondaryImages[1]}\n          alt=\"\"\n          className=\"size-full object-cover\"\n        />\n      </div>\n    </div>\n  </section>\n);\n\nexport default Stat03;\n",
+      "type": "registry:component",
+      "target": "components/stat-03.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/stat-03.webp"
+  },
+  "categories": [
+    "stat"
+  ],
+  "type": "registry:block"
+}

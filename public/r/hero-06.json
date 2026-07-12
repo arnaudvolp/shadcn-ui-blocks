@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-06",
+  "title": "Hero 06",
+  "description": "A full-screen centered hero with background image, announcement badge, and CTA buttons",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/hero-06/hero.tsx",
+      "content": "import { ExternalLink, Play } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\n\ninterface Hero06Props {\n  badge?: {\n    tag?: string;\n    text: string;\n    url?: string;\n  };\n  title?: string;\n  description?: string;\n  primaryButton?: { text: string; url?: string };\n  secondaryButton?: { text: string; url?: string };\n  backgroundImage?: string;\n  backgroundImageDark?: string;\n  className?: string;\n}\n\nconst Hero06 = ({\n  badge = {\n    tag: \"New\",\n    text: \"See what's new in our latest release\",\n    url: \"#\",\n  },\n  title = \"Build Faster with Shadcn UI Blocks\",\n  description = \"Pre-built landing page components for React. Copy, paste, and customize to ship your product faster.\",\n  primaryButton = { text: \"Get started\", url: \"#\" },\n  secondaryButton = { text: \"Watch demo\", url: \"#\" },\n  backgroundImage = \"/images/backgrounds/background-1.webp\",\n  backgroundImageDark = \"/images/backgrounds/background-1-dark.webp\",\n  className,\n}: Hero06Props) => {\n  return (\n    <section\n      className={cn(\n        \"relative flex min-h-screen w-full items-center overflow-hidden py-16 md:py-24\",\n        className,\n      )}\n    >\n      {backgroundImage && (\n        <div\n          className=\"absolute inset-0 bg-cover bg-center dark:hidden\"\n          style={{ backgroundImage: `url(${backgroundImage})` }}\n        />\n      )}\n      {backgroundImageDark && (\n        <div\n          className=\"absolute inset-0 hidden bg-cover bg-center dark:block\"\n          style={{ backgroundImage: `url(${backgroundImageDark})` }}\n        />\n      )}\n\n      <div className=\"relative z-10 container mx-auto px-6\">\n        <div className=\"flex flex-col items-center gap-4 text-center\">\n          {badge && (\n            <Badge\n              variant=\"outline\"\n              className=\"gap-2 border border-border py-1 pr-3 pl-1\"\n              asChild\n            >\n              <a href={badge.url || \"#\"}>\n                {badge.tag && (\n                  <span className=\"rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground\">\n                    {badge.tag}\n                  </span>\n                )}\n                <span>{badge.text}</span>\n                <ExternalLink className=\"size-3\" />\n              </a>\n            </Badge>\n          )}\n\n          <h1 className=\"max-w-5xl text-4xl leading-tight font-medium tracking-tight md:text-5xl lg:text-6xl\">\n            {title}\n          </h1>\n\n          <p className=\"max-w-2xl text-muted-foreground md:text-lg\">\n            {description}\n          </p>\n\n          <div className=\"grid w-full grid-cols-1 gap-4 sm:w-fit sm:grid-cols-2\">\n            {primaryButton && (\n              <Button size=\"lg\" variant=\"default\" className=\"w-full\" asChild>\n                <a href={primaryButton.url || \"#\"}>{primaryButton.text}</a>\n              </Button>\n            )}\n            {secondaryButton && (\n              <Button size=\"lg\" variant=\"outline\" className=\"w-full\" asChild>\n                <a href={secondaryButton.url || \"#\"}>\n                  {secondaryButton.text}\n                  <Play className=\"size-4\" />\n                </a>\n              </Button>\n            )}\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Hero06;\n",
+      "type": "registry:component",
+      "target": "components/hero-06.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/hero-06.webp"
+  },
+  "categories": [
+    "hero"
+  ],
+  "type": "registry:block"
+}
