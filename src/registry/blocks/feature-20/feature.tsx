@@ -117,7 +117,7 @@ const Feature20 = ({
     <div className="grid gap-6 md:grid-cols-3">
       {items.map((item, index) => (
         <Card key={index} className="gap-0 p-0 shadow-none">
-          <div className="flex items-center justify-center rounded-t-xl bg-muted/50 p-8">
+          <div className="flex h-64 shrink-0 items-center justify-center rounded-t-xl bg-muted/50 p-4 lg:p-8">
             {item.mockup}
           </div>
           <CardContent className="p-6">

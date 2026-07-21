@@ -21,8 +21,6 @@ interface HeroTestimonial {
 }
 
 interface Hero07Props {
-  logo?: string;
-  links?: { text: string; url?: string }[];
   badge?: { text: string; url?: string };
   title?: string;
   description?: string;
@@ -71,12 +69,6 @@ const defaultBrands: React.ReactNode[] = [
 ];
 
 const Hero07 = ({
-  logo = "shadcnship",
-  links = [
-    { text: "About", url: "#" },
-    { text: "Blocks", url: "#" },
-    { text: "Templates", url: "#" },
-  ],
   badge = { text: "50+ production-ready blocks and counting", url: "#" },
   title = "Blocks Made for\nPages You'll\nShip Faster",
   description = "Pre-built landing page components for React. Just copy the code and focus on what matters — your product.",
@@ -92,26 +84,10 @@ const Hero07 = ({
     <div className="grid gap-8 lg:min-h-[85vh] lg:grid-cols-[11fr_9fr]">
       {/* Left column */}
       <div className="flex flex-col">
-        {/* Top nav */}
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-semibold tracking-tight">{logo}</span>
-          <nav className="flex items-center gap-6">
-            {links.map((link) => (
-              <a
-                key={link.text}
-                href={link.url}
-                className="text-sm font-medium text-muted-foreground transition-colors first:text-foreground hover:text-foreground"
-              >
-                {link.text}
-              </a>
-            ))}
-          </nav>
-        </div>
-
         {/* Main content */}
-        <div className="mt-16 flex flex-col items-start gap-6 md:mt-24">
+        <div className="mt-8 flex flex-col items-start gap-6 md:mt-16">
           {badge && (
-            <Badge variant="secondary" className="gap-1 border border-border py-1" asChild>
+            <Badge className="gap-1 py-1" asChild>
               <a href={badge.url}>
                 {badge.text}
                 <ChevronRight className="size-3.5" />
@@ -156,59 +132,62 @@ const Hero07 = ({
         )}
 
         {/* Floating testimonials overlay */}
-        <div className="absolute top-8 right-6 flex w-[85%] max-w-sm flex-col gap-3 md:right-8">
+        <div className="absolute top-8 right-6 z-10 flex w-[85%] max-w-sm flex-col gap-3 md:right-8">
           <h2 className="text-center text-xl font-medium text-white">
             {testimonialsTitle}
           </h2>
 
-          {testimonials.slice(0, 1).map((item, index) => (
-            <Card
-              key={index}
-              className="gap-3 border-0 bg-background/70 p-5 backdrop-blur-sm"
-            >
-              <p className="text-sm leading-relaxed font-medium md:text-base">
-                &ldquo;{item.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <Avatar className="size-8">
+          {/* Overlapping stack: the featured quote card stays on top */}
+          <div className="flex flex-col">
+            {testimonials.slice(0, 1).map((item, index) => (
+              <Card
+                key={index}
+                className="relative z-30 gap-3 border-0 bg-background/70 p-5 text-card-foreground backdrop-blur-sm"
+              >
+                <p className="text-sm leading-relaxed font-medium md:text-base">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <Avatar className="size-8">
+                    <AvatarImage src={item.avatar} alt="" />
+                    <AvatarFallback className="text-xs">
+                      {item.name.charAt(0)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium">{item.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {item.subtitle}
+                    </span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+
+            {/* Smaller cards sliding under the previous one */}
+            {testimonials.slice(1, 3).map((item, index) => (
+              <Card
+                key={index}
+                className={cn(
+                  "relative -mt-4 flex-row items-center gap-3 border-0 bg-background/40 p-4 pt-7 text-card-foreground backdrop-blur-sm",
+                  index === 0 ? "z-20" : "z-10 opacity-70",
+                )}
+              >
+                <Avatar className="size-7">
                   <AvatarImage src={item.avatar} alt="" />
                   <AvatarFallback className="text-xs">
                     {item.name.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col">
+                <div className="flex min-w-0 flex-col">
                   <span className="text-sm font-medium">{item.name}</span>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="truncate text-xs text-muted-foreground">
                     {item.subtitle}
                   </span>
                 </div>
-              </div>
-            </Card>
-          ))}
-
-          {/* Smaller stacked cards, partially visible */}
-          {testimonials.slice(1, 3).map((item, index) => (
-            <Card
-              key={index}
-              className={cn(
-                "flex-row items-center gap-3 border-0 bg-background/40 p-4 backdrop-blur-sm",
-                index === 1 && "-mt-1 opacity-60",
-              )}
-            >
-              <Avatar className="size-7">
-                <AvatarImage src={item.avatar} alt="" />
-                <AvatarFallback className="text-xs">
-                  {item.name.charAt(0)}
-                </AvatarFallback>
-              </Avatar>
-              <div className="flex min-w-0 flex-col">
-                <span className="text-sm font-medium">{item.name}</span>
-                <span className="truncate text-xs text-muted-foreground">
-                  {item.subtitle}
-                </span>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
       </Card>
     </div>

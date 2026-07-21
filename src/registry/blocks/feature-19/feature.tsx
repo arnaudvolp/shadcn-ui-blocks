@@ -11,7 +11,6 @@ interface Feature19Panel {
 interface Feature19Props {
   title?: string;
   panels?: [Feature19Panel, Feature19Panel];
-  footer?: { left: string; center?: string; right: string };
   className?: string;
 }
 
@@ -33,11 +32,6 @@ const Feature19 = ({
         "With production-ready blocks, a landing page can come together through copy, paste and customization — and your brand can be part of the process.",
     },
   ],
-  footer = {
-    left: "shadcnship",
-    center: "Introduction",
-    right: "01",
-  },
   className,
 }: Feature19Props) => (
   <section className={cn("container mx-auto px-8 py-12 md:py-24", className)}>
@@ -84,19 +78,6 @@ const Feature19 = ({
         </Button>
       </div>
     </div>
-
-    {/* Minimal footer bar */}
-    {footer && (
-      <div className="mt-12 flex items-center justify-between border-t pt-4 text-xs text-muted-foreground md:mt-16">
-        <span className="font-semibold text-foreground">{footer.left}</span>
-        {footer.center && (
-          <span className="rounded-full border px-3 py-0.5">
-            {footer.center}
-          </span>
-        )}
-        <span>{footer.right}</span>
-      </div>
-    )}
   </section>
 );
 
