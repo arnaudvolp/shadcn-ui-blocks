@@ -162,6 +162,36 @@
       ]
     },
     {
+      "name": "hero-07",
+      "type": "registry:block",
+      "title": "Hero 07",
+      "description": "A split hero with top nav, badge, search input, brand icons, and an image card with floating testimonials",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "input",
+        "avatar",
+        "https://shadcnship.com/r/social-icons.json"
+      ],
+      "categories": [
+        "hero"
+      ],
+      "meta": {
+        "image": "/r/previews/hero-07.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-07/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero-07.tsx"
+        }
+      ]
+    },
+    {
       "name": "feature-01",
       "type": "registry:block",
       "title": "Feature 01",
@@ -629,6 +659,31 @@
           "path": "src/registry/blocks/testimonial-03/testimonial.tsx",
           "type": "registry:component",
           "target": "components/testimonial-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-04",
+      "type": "registry:block",
+      "title": "Testimonial 04",
+      "description": "A testimonial gallery with a dominant featured landscape card and three narrow portrait brand cards",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "categories": [
+        "testimonial"
+      ],
+      "meta": {
+        "image": "/r/previews/testimonial-04.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-04/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-04.tsx"
         }
       ]
     },
@@ -1561,6 +1616,59 @@
           "path": "src/registry/blocks/feature-18/feature.tsx",
           "type": "registry:component",
           "target": "components/feature-18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-19",
+      "type": "registry:block",
+      "title": "Feature 19",
+      "description": "An editorial split section with large title, two compared image panels, circular arrow button, and footer bar",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-19.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-19/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-19.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-20",
+      "type": "registry:block",
+      "title": "Feature 20",
+      "description": "A 3-card feature section with decorative UI mockups (form, call, pricing) and split header",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "checkbox",
+        "avatar"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-20.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-20/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-20.tsx"
         }
       ]
     },

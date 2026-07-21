@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-20",
+  "title": "Feature 20",
+  "description": "A 3-card feature section with decorative UI mockups (form, call, pricing) and split header",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "checkbox",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/feature-20/feature.tsx",
+      "content": "import { Phone, PhoneOff } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\nimport { Button } from \"@/components/ui/button\";\nimport { Card, CardContent } from \"@/components/ui/card\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\n\ninterface Feature20Item {\n  title: string;\n  description: string;\n  mockup?: React.ReactNode;\n}\n\ninterface Feature20Props {\n  title?: string;\n  description?: string;\n  items?: [Feature20Item, Feature20Item, Feature20Item];\n  className?: string;\n}\n\n/* Decorative UI mockups suggesting real product surfaces */\nconst FormMockup = () => (\n  <div className=\"w-3/4 rounded-lg border bg-background p-4 shadow-sm\">\n    <p className=\"text-sm font-medium\">Type of Block</p>\n    <div className=\"mt-3 flex items-center gap-2 rounded-md border px-3 py-2 shadow-sm\">\n      <Checkbox checked aria-label=\"Selected\" />\n      <span className=\"text-sm\">Hero Section</span>\n    </div>\n    <div className=\"mt-3 flex flex-col gap-2\">\n      {Array.from({ length: 3 }).map((_, i) => (\n        <div key={i} className=\"h-2 rounded-full bg-muted\" />\n      ))}\n    </div>\n  </div>\n);\n\nconst CallMockup = () => (\n  <div className=\"w-3/4 overflow-hidden rounded-lg border bg-background shadow-sm\">\n    <img\n      src=\"https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp\"\n      alt=\"\"\n      className=\"aspect-video w-full object-cover\"\n    />\n    <div className=\"flex items-center gap-2 p-3\">\n      <Avatar className=\"size-8\">\n        <AvatarImage src=\"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face\" />\n        <AvatarFallback className=\"text-xs\">JR</AvatarFallback>\n      </Avatar>\n      <div className=\"flex min-w-0 flex-1 flex-col\">\n        <span className=\"truncate text-sm font-medium\">Jack Riley</span>\n        <span className=\"text-xs text-muted-foreground\">Incoming call...</span>\n      </div>\n      <Button size=\"icon\" variant=\"secondary\" className=\"size-8 rounded-full\" aria-label=\"Decline\">\n        <PhoneOff className=\"size-3.5\" />\n      </Button>\n      <Button size=\"icon\" className=\"size-8 rounded-full\" aria-label=\"Answer\">\n        <Phone className=\"size-3.5\" />\n      </Button>\n    </div>\n  </div>\n);\n\nconst PricingMockup = () => (\n  <div className=\"w-3/4 rounded-lg border bg-background p-4 shadow-sm\">\n    <div className=\"flex items-start justify-between gap-2\">\n      <p className=\"text-sm font-medium\">All Blocks</p>\n      <p className=\"text-sm text-muted-foreground\">$0/year</p>\n    </div>\n    <div className=\"mt-3 flex flex-col gap-2\">\n      {Array.from({ length: 4 }).map((_, i) => (\n        <div key={i} className=\"h-2 rounded-full bg-muted\" />\n      ))}\n    </div>\n    <Button className=\"mt-4 w-full\">Start Now</Button>\n  </div>\n);\n\nconst defaultItems: [Feature20Item, Feature20Item, Feature20Item] = [\n  {\n    title: \"Copy & Paste\\nReady\",\n    description:\n      \"Every component is ready to use. Just copy the code and paste it into your project.\",\n    mockup: <FormMockup />,\n  },\n  {\n    title: \"Fully\\nCustomizable\",\n    description:\n      \"Built with Tailwind CSS, every component can be easily modified to match your brand.\",\n    mockup: <CallMockup />,\n  },\n  {\n    title: \"TypeScript\\nFirst\",\n    description:\n      \"All components are fully typed with TypeScript for better developer experience.\",\n    mockup: <PricingMockup />,\n  },\n];\n\nconst Feature20 = ({\n  title = \"Everything You Need\\nto Build Faster\",\n  description = \"Production-ready blocks built with shadcn/ui and Tailwind CSS. Copy, customize, and ship.\",\n  items = defaultItems,\n  className,\n}: Feature20Props) => (\n  <section className={cn(\"container mx-auto px-8 py-12 md:py-24\", className)}>\n    {/* Header: title left, paragraph right on the same row */}\n    <div className=\"mb-12 grid gap-6 md:grid-cols-[3fr_2fr] md:items-start md:gap-16\">\n      <h2 className=\"text-4xl leading-tight font-medium tracking-tight whitespace-pre-line md:text-5xl\">\n        {title}\n      </h2>\n      <p className=\"text-muted-foreground md:justify-self-end md:text-right lg:max-w-sm\">\n        {description}\n      </p>\n    </div>\n\n    {/* 3 equal cards with UI mockups */}\n    <div className=\"grid gap-6 md:grid-cols-3\">\n      {items.map((item, index) => (\n        <Card key={index} className=\"gap-0 p-0 shadow-none\">\n          <div className=\"flex items-center justify-center rounded-t-xl bg-muted/50 p-8\">\n            {item.mockup}\n          </div>\n          <CardContent className=\"p-6\">\n            <h3 className=\"text-xl leading-snug font-medium tracking-tight whitespace-pre-line\">\n              {item.title}\n            </h3>\n            <p className=\"mt-3 text-sm text-muted-foreground\">\n              {item.description}\n            </p>\n          </CardContent>\n        </Card>\n      ))}\n    </div>\n  </section>\n);\n\nexport default Feature20;\nexport type { Feature20Props, Feature20Item };\n",
+      "type": "registry:component",
+      "target": "components/feature-20.tsx"
+    }
+  ],
+  "meta": {
+    "image": "/r/previews/feature-20.webp"
+  },
+  "categories": [
+    "feature"
+  ],
+  "type": "registry:block"
+}
