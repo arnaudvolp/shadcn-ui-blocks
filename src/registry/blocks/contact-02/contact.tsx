@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
-import { ArrowUpRight, Clock, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, Mountain, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -47,58 +47,53 @@ interface ContactInfoItem {
 }
 
 interface Contact02Props {
-  label?: string;
+  logo?: string;
+  basedIn?: { label: string; place: string };
+  links?: { text: string; url?: string }[];
+  badge?: string;
   title?: string;
   description?: string;
   tours?: string[];
   img?: string;
   imgBadge?: string;
   contactInfo?: ContactInfoItem[];
-  teaser?: {
-    chip: string;
-    title: string;
-    description: string;
-    images: [string, string];
-  };
   className?: string;
 }
 
 const defaultContactInfo: ContactInfoItem[] = [
   {
     icon: <Phone className="size-5" />,
-    label: "Call Us",
-    details: ["+1 (555) 123-4567", "Mon–Fri from 9am to 6pm"],
+    label: "Call & WhatsApp",
+    details: ["+966 55 123 4567", "+966 53 987 6543"],
   },
   {
     icon: <Clock className="size-5" />,
-    label: "Availability",
-    details: ["We confirm every request", "within 24 hours"],
+    label: "Working Hours",
+    details: ["Daily: 8am–5pm", "Friday: Closed"],
   },
   {
     icon: <Mail className="size-5" />,
-    label: "Email Us",
-    details: ["hello@example.com", "We reply to every message"],
+    label: "Write to Us",
+    details: ["info@example.com", "booking@example.com"],
   },
 ];
 
 const Contact02 = ({
-  label = "Plan Trip",
+  logo = "Marwa",
+  basedIn = { label: "Based in", place: "AlUla Region" },
+  links = [
+    { text: "Tours", url: "#" },
+    { text: "About", url: "#" },
+    { text: "Blog", url: "#" },
+    { text: "Gallery", url: "#" },
+  ],
+  badge = "Plan Trip",
   title = "Contact Us",
   description = "Tell us when and where you'd like to go and we'll confirm availability within 24 hours.",
   tours = ["City Highlights", "Desert Safari", "Coastal Escape", "Mountain Trek"],
   img = "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
   imgBadge = "Your Journey",
   contactInfo = defaultContactInfo,
-  teaser = {
-    chip: "Start now",
-    title: "Ready for your next adventure?",
-    description:
-      "Browse our most popular tours and find the journey that fits you best.",
-    images: [
-      "https://www.shadcnship.com/images/placeholders/hero-architecture-5.webp",
-      "https://www.shadcnship.com/images/placeholders/hero-architecture-6.webp",
-    ],
-  },
   className,
 }: Contact02Props) => {
   const form = useForm<FormValues>({
@@ -125,165 +120,195 @@ const Contact02 = ({
   };
 
   return (
-    <section className={cn("container mx-auto px-8 py-12 md:py-24", className)}>
+    <section className={cn("container mx-auto px-8 py-8 md:py-12", className)}>
       <Toaster />
 
-      {/* Header: label + display title left, subtitle top-right */}
-      <div className="grid gap-6 md:grid-cols-2 md:items-end">
-        <div className="flex flex-col gap-3">
-          <p className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
-            {label}
-          </p>
-          <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">
+      {/* Top navbar */}
+      <nav className="flex items-center justify-between">
+        <a href="#" className="flex items-center gap-2 font-semibold">
+          <Mountain className="size-5" />
+          {logo}
+        </a>
+        <p className="hidden text-sm text-muted-foreground md:block">
+          {basedIn.label}: <span className="text-foreground">{basedIn.place}</span>
+        </p>
+        <div className="hidden items-center gap-6 md:flex">
+          {links.map((link) => (
+            <a
+              key={link.text}
+              href={link.url}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.text}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      {/* Header: badge + display title left, subtitle bottom-right */}
+      <div className="mt-16 flex flex-col gap-6 md:mt-24">
+        <Badge variant="secondary" className="w-fit rounded-full py-1">
+          {badge}
+        </Badge>
+        <div className="grid gap-4 md:grid-cols-2 md:items-end">
+          <h2 className="text-5xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
             {title}
           </h2>
+          <p className="max-w-sm text-muted-foreground md:justify-self-end md:text-right">
+            {description}
+          </p>
         </div>
-        <p className="max-w-sm text-muted-foreground md:justify-self-end">
-          {description}
-        </p>
       </div>
 
       {/* Form + image */}
-      <div className="mt-12 grid gap-8 lg:grid-cols-[3fr_2fr]">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col gap-6"
-          >
-            <div className="grid gap-6 sm:grid-cols-2">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your full name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="you@example.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="+966 55 123 4567" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="tour"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Select Your Tour</FormLabel>
-                    <Select onValueChange={field.onChange} value={field.value}>
+      <div className="mt-12 grid gap-6 lg:grid-cols-[3fr_2fr]">
+        <div className="rounded-2xl bg-muted/40 p-6 md:p-8">
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="flex flex-col gap-6"
+            >
+              <div className="grid gap-6 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Choose your tour..." />
-                        </SelectTrigger>
+                        <Input placeholder="Your full name" {...field} />
                       </FormControl>
-                      <SelectContent>
-                        {tours.map((tour) => (
-                          <SelectItem key={tour} value={tour}>
-                            {tour}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="you@example.com"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input placeholder="+966 55 123 4567" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="tour"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Select Your Tour</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Choose your tour..." />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {tours.map((tour) => (
+                            <SelectItem key={tour} value={tour}>
+                              {tour}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="date"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Preferred Date</FormLabel>
+                      <FormControl>
+                        <Input type="date" placeholder="dd/mm/yyyy" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="travelers"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Number of Travelers</FormLabel>
+                      <FormControl>
+                        <Input placeholder="2 adults, 1 child" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
               <FormField
                 control={form.control}
-                name="date"
+                name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Preferred Date</FormLabel>
+                    <FormLabel>Message / Special Requests</FormLabel>
                     <FormControl>
-                      <Input placeholder="dd/mm/yyyy" {...field} />
+                      <Textarea
+                        rows={4}
+                        placeholder="Anything else we should know?"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="travelers"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Number of Travelers</FormLabel>
-                    <FormControl>
-                      <Input placeholder="2 adults, 1 child" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
 
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message / Special Requests</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      rows={4}
-                      placeholder="Anything else we should know?"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="mt-2 flex items-center gap-3">
-              <Button
-                type="submit"
-                size="lg"
-                className="rounded-full"
-                disabled={form.formState.isSubmitting}
-              >
-                {form.formState.isSubmitting ? "Sending..." : "Reserve Your Spot"}
-              </Button>
-              <Button
-                type="submit"
-                size="icon"
-                className="rounded-full"
-                disabled={form.formState.isSubmitting}
-                aria-label="Reserve Your Spot"
-              >
-                <ArrowUpRight className="size-4" />
-              </Button>
-            </div>
-          </form>
-        </Form>
+              <div className="flex items-center gap-3">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="rounded-full"
+                  disabled={form.formState.isSubmitting}
+                >
+                  {form.formState.isSubmitting
+                    ? "Sending..."
+                    : "Reserve Your Spot"}
+                </Button>
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="size-11 rounded-full"
+                  disabled={form.formState.isSubmitting}
+                  aria-label="Reserve Your Spot"
+                >
+                  <ArrowUpRight className="size-4" />
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </div>
 
         {/* Image slot with badge overlay */}
-        <div className="relative order-first min-h-64 overflow-hidden rounded-xl bg-muted lg:order-none lg:min-h-full">
+        <div className="relative order-first min-h-72 overflow-hidden rounded-2xl bg-muted lg:order-none lg:min-h-full">
           {img && (
             <img
               src={img}
@@ -302,15 +327,18 @@ const Contact02 = ({
         </div>
       </div>
 
-      {/* Contact info strip */}
-      <div className="mt-12 grid gap-8 border-t pt-10 md:grid-cols-3 md:gap-6">
+      {/* Contact info strip — centered columns */}
+      <div className="mt-12 grid gap-10 border-t pt-12 md:grid-cols-3 md:gap-6">
         {contactInfo.map((info) => (
-          <div key={info.label} className="flex items-start gap-4">
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+          <div
+            key={info.label}
+            className="flex flex-col items-center gap-3 text-center"
+          >
+            <div className="flex size-11 items-center justify-center rounded-full bg-muted">
               {info.icon}
             </div>
+            <p className="font-semibold">{info.label}</p>
             <div>
-              <p className="font-semibold">{info.label}</p>
               {info.details.map((line, i) => (
                 <p key={i} className="text-sm text-muted-foreground">
                   {line}
@@ -320,29 +348,6 @@ const Contact02 = ({
           </div>
         ))}
       </div>
-
-      {/* Teaser */}
-      {teaser && (
-        <div className="mt-16 flex flex-col items-center gap-4 text-center md:mt-24">
-          <Badge variant="secondary" className="rounded-full border border-border py-1">
-            {teaser.chip}
-          </Badge>
-          <h3 className="max-w-xl text-3xl font-semibold tracking-tight md:text-4xl">
-            {teaser.title}
-          </h3>
-          <p className="max-w-md text-muted-foreground">{teaser.description}</p>
-          <div className="mt-6 grid w-full grid-cols-2 gap-4">
-            {teaser.images.map((src, i) => (
-              <div
-                key={i}
-                className="aspect-video overflow-hidden rounded-xl bg-muted"
-              >
-                <img src={src} alt="" className="size-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </section>
   );
 };
