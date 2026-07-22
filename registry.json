@@ -889,6 +889,46 @@
       ]
     },
     {
+      "name": "contact-02",
+      "type": "registry:block",
+      "title": "Contact 02",
+      "description": "A pro contact form with split layout, tour select, image slot, contact info strip, teaser, and Resend email integration",
+      "dependencies": [
+        "lucide-react",
+        "react-hook-form",
+        "zod",
+        "sonner",
+        "resend"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "form",
+        "input",
+        "select",
+        "textarea",
+        "sonner"
+      ],
+      "categories": [
+        "contact"
+      ],
+      "meta": {
+        "image": "/r/previews/contact-02.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/contact-02/contact.tsx",
+          "type": "registry:component",
+          "target": "components/contact-02/contact.tsx"
+        },
+        {
+          "path": "src/registry/blocks/contact-02/resend/action.ts",
+          "type": "registry:component",
+          "target": "components/contact-02/resend/action.ts"
+        }
+      ]
+    },
+    {
       "name": "footer-01",
       "type": "registry:block",
       "title": "Footer 01",

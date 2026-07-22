@@ -45,6 +45,7 @@
     "react-dom": "19.2.3",
     "react-hook-form": "^7.71.1",
     "recharts": "2.15.4",
+    "resend": "^6.18.0",
     "schema-dts": "^1.1.5",
     "shiki": "^3.21.0",
     "sonner": "^2.0.7",
