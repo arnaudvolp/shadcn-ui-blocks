@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
-import { ArrowUpRight, Clock, Mail, Mountain, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -47,7 +47,6 @@ interface ContactInfoItem {
 }
 
 interface Contact02Props {
-  logo?: string;
   basedIn?: { label: string; place: string };
   links?: { text: string; url?: string }[];
   badge?: string;
@@ -79,7 +78,6 @@ const defaultContactInfo: ContactInfoItem[] = [
 ];
 
 const Contact02 = ({
-  logo = "Marwa",
   basedIn = { label: "Based in", place: "AlUla Region" },
   links = [
     { text: "Tours", url: "#" },
@@ -125,11 +123,7 @@ const Contact02 = ({
 
       {/* Top navbar */}
       <nav className="flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-semibold">
-          <Mountain className="size-5" />
-          {logo}
-        </a>
-        <p className="hidden text-sm text-muted-foreground md:block">
+        <p className="text-sm text-muted-foreground">
           {basedIn.label}: <span className="text-foreground">{basedIn.place}</span>
         </p>
         <div className="hidden items-center gap-6 md:flex">
