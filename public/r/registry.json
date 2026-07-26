@@ -633,6 +633,31 @@
       ]
     },
     {
+      "name": "testimonial-04",
+      "type": "registry:block",
+      "title": "Testimonial 04",
+      "description": "A testimonial gallery with a dominant featured landscape card and three narrow portrait brand cards",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "categories": [
+        "testimonial"
+      ],
+      "meta": {
+        "image": "/r/previews/testimonial-04.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/testimonial-04/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/testimonial-04.tsx"
+        }
+      ]
+    },
+    {
       "name": "stat-01",
       "type": "registry:block",
       "title": "Stat 01",
@@ -830,6 +855,40 @@
           "path": "src/registry/blocks/contact-01/contact.tsx",
           "type": "registry:component",
           "target": "components/contact-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-02",
+      "type": "registry:block",
+      "title": "Contact 02",
+      "description": "A pro contact form with split layout, tour select, image slot, and contact info strip",
+      "dependencies": [
+        "lucide-react",
+        "react-hook-form",
+        "zod",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "form",
+        "input",
+        "select",
+        "textarea",
+        "sonner"
+      ],
+      "categories": [
+        "contact"
+      ],
+      "meta": {
+        "image": "/r/previews/contact-02.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/contact-02/contact.tsx",
+          "type": "registry:component",
+          "target": "components/contact-02/contact.tsx"
         }
       ]
     },
@@ -1561,6 +1620,59 @@
           "path": "src/registry/blocks/feature-18/feature.tsx",
           "type": "registry:component",
           "target": "components/feature-18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-19",
+      "type": "registry:block",
+      "title": "Feature 19",
+      "description": "An editorial split section with large title, two compared image panels, circular arrow button, and footer bar",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-19.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-19/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-19.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-20",
+      "type": "registry:block",
+      "title": "Feature 20",
+      "description": "A 3-card feature section with decorative UI mockups (form, call, pricing) and split header",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "checkbox",
+        "avatar"
+      ],
+      "categories": [
+        "feature"
+      ],
+      "meta": {
+        "image": "/r/previews/feature-20.webp"
+      },
+      "files": [
+        {
+          "path": "src/registry/blocks/feature-20/feature.tsx",
+          "type": "registry:component",
+          "target": "components/feature-20.tsx"
         }
       ]
     },
