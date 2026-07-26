@@ -26,7 +26,6 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Toaster } from "@/components/ui/sonner";
-import { sendContactEmail } from "./resend/action";
 
 const formSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -47,8 +46,6 @@ interface ContactInfoItem {
 }
 
 interface Contact02Props {
-  basedIn?: { label: string; place: string };
-  links?: { text: string; url?: string }[];
   badge?: string;
   title?: string;
   description?: string;
@@ -78,17 +75,15 @@ const defaultContactInfo: ContactInfoItem[] = [
 ];
 
 const Contact02 = ({
-  basedIn = { label: "Based in", place: "AlUla Region" },
-  links = [
-    { text: "Tours", url: "#" },
-    { text: "About", url: "#" },
-    { text: "Blog", url: "#" },
-    { text: "Gallery", url: "#" },
-  ],
   badge = "Plan Trip",
   title = "Contact Us",
   description = "Tell us when and where you'd like to go and we'll confirm availability within 24 hours.",
-  tours = ["City Highlights", "Desert Safari", "Coastal Escape", "Mountain Trek"],
+  tours = [
+    "City Highlights",
+    "Desert Safari",
+    "Coastal Escape",
+    "Mountain Trek",
+  ],
   img = "https://www.shadcnship.com/images/placeholders/hero-architecture-7.webp",
   imgBadge = "Your Journey",
   contactInfo = defaultContactInfo,
@@ -107,40 +102,18 @@ const Contact02 = ({
     },
   });
 
-  const onSubmit = async (values: FormValues) => {
-    const result = await sendContactEmail(values);
-    if (result.success) {
-      toast.success("Request sent! We'll get back to you within 24 hours.");
-      form.reset();
-    } else {
-      toast.error(result.error ?? "Something went wrong. Please try again.");
-    }
+  const onSubmit = (values: FormValues) => {
+    console.log(values);
+    toast.success("Request sent! We'll get back to you within 24 hours.");
+    form.reset();
   };
 
   return (
     <section className={cn("container mx-auto px-8 py-8 md:py-12", className)}>
       <Toaster />
 
-      {/* Top navbar */}
-      <nav className="flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">
-          {basedIn.label}: <span className="text-foreground">{basedIn.place}</span>
-        </p>
-        <div className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.text}
-              href={link.url}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.text}
-            </a>
-          ))}
-        </div>
-      </nav>
-
       {/* Header: badge + display title left, subtitle bottom-right */}
-      <div className="mt-16 flex flex-col gap-6 md:mt-24">
+      <div className="flex flex-col gap-6">
         <Badge variant="secondary" className="w-fit rounded-full py-1">
           {badge}
         </Badge>
@@ -212,7 +185,10 @@ const Contact02 = ({
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Select Your Tour</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Choose your tour..." />
@@ -237,7 +213,11 @@ const Contact02 = ({
                     <FormItem>
                       <FormLabel>Preferred Date</FormLabel>
                       <FormControl>
-                        <Input type="date" placeholder="dd/mm/yyyy" {...field} />
+                        <Input
+                          type="date"
+                          placeholder="dd/mm/yyyy"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

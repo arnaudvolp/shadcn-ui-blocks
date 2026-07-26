@@ -50,7 +50,12 @@ const CallMockup = () => (
         <span className="truncate text-sm font-medium">Jack Riley</span>
         <span className="text-xs text-muted-foreground">Incoming call...</span>
       </div>
-      <Button size="icon" variant="secondary" className="size-8 rounded-full" aria-label="Decline">
+      <Button
+        size="icon"
+        variant="secondary"
+        className="size-8 rounded-full"
+        aria-label="Decline"
+      >
         <PhoneOff className="size-3.5" />
       </Button>
       <Button size="icon" className="size-8 rounded-full" aria-label="Answer">
@@ -117,7 +122,7 @@ const Feature20 = ({
     <div className="grid gap-6 md:grid-cols-3">
       {items.map((item, index) => (
         <Card key={index} className="gap-0 p-0 shadow-none">
-          <div className="flex h-64 shrink-0 items-center justify-center rounded-t-xl bg-muted/50 p-4 lg:p-8">
+          <div className="flex h-64 shrink-0 items-center justify-center rounded-t-xl bg-muted/50 py-4 lg:p-8">
             {item.mockup}
           </div>
           <CardContent className="p-6">
